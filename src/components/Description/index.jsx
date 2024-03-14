@@ -5,7 +5,8 @@ import { slideUp, opacity } from './animation';
 import Rounded from '../../common/RoundedButton';
 export default function index() {
 
-    const phrase = "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.";
+    const phrase1 = "Besoin de faire connaître votre produit ou de construire votre audience ?";
+    const phrase2 = "Je vous aide à créer des expériences web sur-mesures...et mémorables !";
     const description = useRef(null);
     const isInView = useInView(description)
     return (
@@ -13,16 +14,23 @@ export default function index() {
             <div className={styles.body}>
                 <p>
                 {
-                    phrase.split(" ").map( (word, index) => {
+                    phrase1.split(" ").map( (word, index) => {
                         return <span key={index} className={styles.mask}><motion.span variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>{word}</motion.span></span>
+                    })
+                }<br/><br/>
+                {
+                    phrase2.split(" ").map( (word, index) => {
+                        return <span key={index} className={styles.mask}><motion.span variants={slideUp} custom={index + 20} animate={isInView ? "open" : "closed"} key={index}>{word}</motion.span></span>
                     })
                 }
                 </p>
-                <motion.p variants={opacity} animate={isInView ? "open" : "closed"}>The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</motion.p>
+                <motion.p className={styles.skills} variants={opacity} animate={isInView ? "open" : "closed"}>Design & Prototypes<br/>Data Science<br/>Animation 3D<br/>Développement Web<br/>Automatisation</motion.p>
                 <div data-scroll data-scroll-speed={0.1}>
+                    <a href='#Projets' data-scroll-to>
                     <Rounded className={styles.button}>
-                        <p>About me</p>
+                        <p>Quelques<br/>exemples ?</p>
                     </Rounded>
+                    </a>
                 </div>
             </div>
         </div>

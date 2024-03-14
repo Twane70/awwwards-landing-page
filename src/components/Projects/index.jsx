@@ -9,24 +9,28 @@ import Rounded from '../../common/RoundedButton';
 
 const projects = [
   {
-    title: "C2 Montreal",
-    src: "c2montreal.png",
-    color: "#000000"
+    title: "Paldex",
+    type: "Animation 3D | Design",
+    src: "paldex_screen.gif",
+    color: "#5f823c"
   },
   {
-    title: "Office Studio",
-    src: "officestudio.png",
-    color: "#8C8C8C"
+    title: "Fractallium",
+    type: "Design | Base de Données",
+    src: "fractallium.png",
+    color: "#543c82"
   },
   {
-    title: "Locomotive",
-    src: "locomotive.png",
-    color: "#EFE8D3"
+    title: "Techno Trash",
+    type: "Animation | Storytelling",
+    src: "technotrash_all.png",
+    color: "#274554"
   },
   {
-    title: "Silencio",
-    src: "silencio.png",
-    color: "#706D63"
+    title: "Lamonde",
+    type: "Prototypage | UI/UX",
+    src: "Lamonde.png",
+    color: "#8a4848"
   }
 ]
 
@@ -77,16 +81,16 @@ export default function Home() {
   }
 
   return (
-  <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
+  <main id="Projets" onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
     <div className={styles.body}>
       {
         projects.map( (project, index) => {
-          return <Project index={index} title={project.title} manageModal={manageModal} key={index}/>
+          return <Project index={index} title={project.title} manageModal={manageModal} key={index} type={project.type}/>
         })
       }
     </div>
     <Rounded>
-      <p>More work</p>
+      <p>+ à venir ...</p>
     </Rounded>
     <>
         <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>
@@ -107,7 +111,7 @@ export default function Home() {
             </div>
         </motion.div>
         <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
-        <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
+        <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>Voir</motion.div>
     </>
   </main>
   )

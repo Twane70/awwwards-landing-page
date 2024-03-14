@@ -14,11 +14,17 @@
     .logo{
         display: flex;
         cursor: pointer;
+        align-items: center;
         p{
             margin: 0px;
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
         }
+        .copyright{
+            font-size: 3rem;
+        }
         .name{
+            font-size: 1.5rem;
+            font-weight: 400;
             display: flex;
             position: relative;
             overflow: hidden;
@@ -27,31 +33,24 @@
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
             p{
                 position: relative;
-                transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
                 &:nth-of-type(2){
-                    padding-left: 0.3em;
-                }
-                &:nth-of-type(3){
                     position: absolute;
-                    left: 120px;
-                    padding-left: 0.3em;
+                    left: 6rem;
                 }
             }
         }
         &:hover{
+            transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
             .copyright{
-                transform: rotate(360deg);
+                transform: rotate(180deg) ;
             }
             .name{
                 padding-right: 30px;
-                .codeBy{
-                    transform: translateX(-100%);
+                .antoine{
+                    transform: translateX(-6rem);
                 }
-                .dennis{
-                    transform: translateX(-65px);
-                }
-                .snellenberg{
-                    transform: translateX(-65px);
+                .tondu{
+                    transform: translateX(-6rem);
                 }
             }
         }
@@ -84,7 +83,9 @@
                 transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
             }
         }
-        a{
+        a{  
+            color:white;
+            text-decoration: none;
             cursor: pointer;
         }
     } 
